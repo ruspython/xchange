@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block title %}All banners{% endblock %}
+{% block content %}
+    {% for banner in banners %}
+        <p>{{ banner.title }}</p>
+        <a href="referring/{{ banner.site_owner.id }}/{{ banner.id }}"><img src="{{ banner.picture.url }}" alt="{{ banner.title }}"></a>
+    {% endfor %}
+
+{% endblock %}

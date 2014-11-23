@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %}All banners{% endblock %}
+{% block content %}
+    <header>
+        <div class="content">
+            <div class="group">
+                {% for banner in banners %}
+                    <p>{{ banner.title }}</p>
+                    <a href="referring/{{ banner.site_owner.id }}/{{ banner.id }}"><img class="banner-image"
+                                                                                        src="{{ banner.picture.url }}"
+                                                                                        alt="{{ banner.title }}"></a>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="overlay"></div>
+    </header>
+    <section class="site">
+        Created by us.
+    </section>
+{% endblock %}
